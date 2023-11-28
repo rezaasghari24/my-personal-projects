@@ -1,0 +1,211 @@
+:root {
+    --color-primary: hsl(4, 100%, 67%);
+    
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: var(--Charcoal-Grey);
+}
+
+.primary-header {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.paragraph {
+    font-size: 1.6rem;
+}
+
+/* MAIN Container*/
+.container {
+    display: flex;
+    background-color: var(--White);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 2rem;
+    padding: 2rem;
+    height: 52rem;
+}
+
+.newsletter {
+    padding: 3rem;
+    max-width: 46rem;
+    min-width: 42rem;
+    height: auto;
+}
+.newsletter > * {
+    margin-bottom: 1.5rem;
+}
+.newsletter__img-box {
+    background-image: url("../assets/images/illustration-sign-up-desktop.svg");
+    background-position: center;
+    border-radius: 2rem;
+    min-width: 36rem;
+    
+}
+
+.newsletter__list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.newsletter__list--icn {
+    margin-right: 1rem;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+}
+
+.labale-box {
+    display: flex;
+    justify-content: space-between;
+}
+.email-lable {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.email-not-valid {
+    color: var(--color-primary);
+    align-self: flex-end;
+
+}
+
+.email-input {
+    outline: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 1.5rem 1.2rem;
+    color: var(--Charcoal-Grey);
+    border: .1rem solid var(--Grey);
+    margin-bottom: 2rem;
+}
+
+.email-input:focus-visible {
+    border: .1rem solid var(--Grey);
+}
+
+.email-input-not-valid {
+    color: red;
+    border: .1rem solid red;
+    background-color: #fde6e4;
+}
+
+#display-email {
+    font-weight: 700;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    width: 100%;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+    transition: all .2s;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    background-image: linear-gradient(to right bottom, rgb(254, 84, 120),rgb(253, 104, 62));
+    box-shadow: 0rem 2rem 71px -13px rgb(254, 84, 120);
+    transform: translateY(-.2rem);
+}
+.btn:active {
+    transform: translateY(0);
+}
+
+/*  Success Container */
+
+.container-success {
+    background-color: var(--White);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    flex-direction: column;
+    padding: 6rem;
+    color: var(--Dark-Slate-Grey);
+    border-radius: 3rem;
+    width: 48rem;
+}
+
+.container-success > :not(:last-child) {
+    margin-bottom: 3rem;
+}
+.icon-box {
+    width: 7rem;
+}
+
+.hidden {
+    display: none;
+}
+/* Media Query for MAIN Container*/
+@media (max-width:900px){
+    .container {
+        padding: 0;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .newsletter__img-box {
+        background-image: url("../assets/images/illustration-sign-up-mobile.svg");
+        background-repeat: no-repeat;
+        width: 100%;
+        order: -1;
+        height: 40vh;
+    }
+
+}
+
+
+/* Media Query for SUCCESS part*/
+@media (max-width:600px){
+    .container-success {
+        width: 100vw;
+        height: 100vh;
+        padding: 13rem 3rem 4rem;
+        border-radius: 0;
+    }
+    .container-success p {
+        flex: 1;
+    }
+}
